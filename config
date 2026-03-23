@@ -1,0 +1,240 @@
+# ============================================
+# Ghostty Configuration - Best Practices
+# Author: Logan CHEN
+# GitHub: https://github.com/loganylchen/ghostty-config
+# Last Updated: 2026-03-23
+# ============================================
+# 
+# Quick Start:
+# 1. Copy this file to ~/.config/ghostty/config
+# 2. Reload Ghostty with Ctrl+Shift+, (Linux) or Cmd+Shift+, (macOS)
+# 
+# Documentation:
+# - Official: https://ghostty.org/docs/config
+# - Reference: https://ghostty.org/docs/config/reference
+# ============================================
+
+# ----------------------------------------
+# APPEARANCE
+# ----------------------------------------
+
+# Theme (built-in or custom)
+theme = dark
+
+# Background and foreground (One Dark inspired)
+background = 1e2127
+foreground = abb2bf
+
+# Cursor settings
+cursor-style = block
+cursor-style-blink = false
+cursor-color = 528bff
+cursor-invert-fg-bg = true
+
+# Selection colors
+selection-background = 3e4451
+selection-foreground = abb2bf
+
+# Window settings
+window-padding-x = 10
+window-padding-y = 10
+window-decoration = true
+
+# Split pane border color
+split-border-color = 3e4451
+
+# ----------------------------------------
+# FONT
+# ----------------------------------------
+
+# Primary font (JetBrains Mono is built-in)
+font-family = JetBrains Mono
+font-size = 12
+
+# Font features (uncomment to disable ligatures)
+# font-feature = -calt
+
+# Adjust line height (positive = more spacing)
+adjust-line-height = 0
+adjust-cell-height = 0
+adjust-cell-width = 0
+
+# ----------------------------------------
+# PERFORMANCE
+# ----------------------------------------
+
+# Scrollback buffer size
+scrollback-limit = 10000
+
+# GPU acceleration (auto-detect best renderer)
+# gpu-renderer = auto
+
+# ----------------------------------------
+# BEHAVIOR
+# ----------------------------------------
+
+# Shell integration (auto-detect zsh/fish/bash)
+shell-integration = detect
+
+# Shell integration features
+shell-integration-features = cursor,sudo,title
+
+# Copy behavior
+copy-on-select = false
+
+# Mouse settings
+mouse-scroll-multiplier = 1.0
+mouse-hide-while-typing = true
+
+# Clipboard settings
+clipboard-read = allow
+clipboard-write = allow
+
+# Links
+link-url = true
+
+# ----------------------------------------
+# KEYBINDINGS
+# ----------------------------------------
+
+# === SPLIT PANES ===
+# Create splits
+keybind = ctrl+shift+d=new_split:right
+keybind = ctrl+shift+e=new_split:down
+
+# Navigate splits
+keybind = ctrl+shift+left=goto_split:left
+keybind = ctrl+shift+right=goto_split:right
+keybind = ctrl+shift+up=goto_split:up
+keybind = ctrl+shift+down=goto_split:down
+
+# Resize splits (by 10%)
+keybind = ctrl+shift+alt+left=resize_split:left,10
+keybind = ctrl+shift+alt+right=resize_split:right,10
+keybind = ctrl+shift+alt+up=resize_split:up,10
+keybind = ctrl+shift+alt+down=resize_split:down,10
+
+# Equalize splits
+keybind = ctrl+shift+equal=equalize_splits
+
+# Close current split/pane
+keybind = ctrl+shift+w=close_surface
+
+# === TABS ===
+# Create/close tabs
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+q=close_tab
+
+# Navigate tabs
+keybind = ctrl+shift+]=next_tab
+keybind = ctrl+shift+[=previous_tab
+keybind = ctrl+alt+1=goto_tab:1
+keybind = ctrl+alt+2=goto_tab:2
+keybind = ctrl+alt+3=goto_tab:3
+keybind = ctrl+alt+4=goto_tab:4
+keybind = ctrl+alt+5=goto_tab:5
+
+# === FONT SIZE ===
+keybind = ctrl+plus=increase_font_size:1
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+0=reset_font_size
+
+# === CLIPBOARD ===
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
+
+# === SEARCH ===
+keybind = ctrl+shift+f=text_search
+
+# === FULLSCREEN ===
+keybind = super+enter=toggle_fullscreen
+
+# === CONFIGURATION ===
+keybind = ctrl+shift+comma=reload_config
+
+# === SCROLLING ===
+keybind = ctrl+shift+page_up=scroll_page_up
+keybind = ctrl+shift+page_down=scroll_page_down
+keybind = ctrl+shift+home=scroll_to_top
+keybind = ctrl+shift+end=scroll_to_bottom
+
+# === MISC ===
+# Clear scrollback
+keybind = ctrl+shift+k=clear_screen
+
+# ----------------------------------------
+# COLOR PALETTE (One Dark)
+# ----------------------------------------
+
+# Black (normal and bright)
+palette = 0=#1e2127
+palette = 8=#5c6370
+
+# Red
+palette = 1=#e06c75
+palette = 9=#e06c75
+
+# Green
+palette = 2=#98c379
+palette = 10=#98c379
+
+# Yellow
+palette = 3=#d19a66
+palette = 11=#d19a66
+
+# Blue
+palette = 4=#61afef
+palette = 12=#61afef
+
+# Magenta
+palette = 5=#c678dd
+palette = 13=#c678dd
+
+# Cyan
+palette = 6=#56b6c2
+palette = 14=#56b6c2
+
+# White
+palette = 7=#abb2bf
+palette = 15=#ffffff
+
+# ----------------------------------------
+# ADVANCED (Optional)
+# ----------------------------------------
+
+# Desktop notifications
+desktop-notifications = true
+
+# Window title formatting
+window-title = {command} - Ghostty
+
+# Bell behavior
+command-notify = true
+
+# ----------------------------------------
+# INCLUDES (Optional)
+# ----------------------------------------
+
+# Include machine-specific config (if exists)
+# config-file = ?~/.config/ghostty/local.conf
+
+# Include theme file (if exists)
+# config-file = ?~/.config/ghostty/theme.conf
+
+# ----------------------------------------
+# NOTES
+# ----------------------------------------
+#
+# To see all available options:
+#   ghostty +show-config --default --docs
+#
+# To list available fonts:
+#   ghostty +list-fonts
+#
+# To test configuration:
+#   ghostty +show-config
+#
+# CLI override example:
+#   ghostty --font-size=14 --theme=light
+#
+# ============================================
