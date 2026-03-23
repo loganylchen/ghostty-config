@@ -5,20 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.1.0] - 2026-03-23
 
 ### Added
-- Cross-platform configuration (macOS + Linux)
-- Catppuccin Mocha and Latte themes
-- Platform-specific blocks ([platform=macos], [platform=linux])
-- JetBrains Mono Nerd Font configuration
-- Enhanced keybindings with Cmd/Ctrl consistency
-- Config reload shortcuts (Cmd+R / Ctrl+R)
-- Bracketed paste support
-- Select-to-copy on both platforms
+- Quick Terminal feature (like iTerm2 Hotkey Window)
+- Clipboard paste protection for security
+- Command finish notifications
+- Split pane zoom functionality (Cmd+Shift+Enter)
+- Background blur effect for macOS
+- Unicode rendering optimization
+- Minimum contrast setting for better readability
+- Font thicken option for clearer text
+- Enhanced mouse behavior (hide while typing, scroll multiplier)
+- Shell integration features (no-cursor, ssh-env)
 
 ### Changed
-- Updated main config to best practices
+- Updated main config to cross-platform best practices
+- Added Catppuccin Mocha and Latte themes
 - Improved split pane management
 - Better font rendering settings
 - Enhanced scrollback buffer (10000 lines)
