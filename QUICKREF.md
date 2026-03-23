@@ -11,48 +11,54 @@ cd ghostty-config
 
 ## Essential Keybindings
 
-### Splits
+### Splits (MacOS: `Cmd`, Linux: `Ctrl`)
+
 | Action | Key |
 |--------|-----|
-| Split Right | `Ctrl+Shift+D` |
-| Split Down | `Ctrl+Shift+E` |
-| Navigate | `Ctrl+Shift+Arrow` |
-| Resize | `Ctrl+Shift+Alt+Arrow` |
-| Close | `Ctrl+Shift+W` |
+| Split Right | `Cmd+D` / `Ctrl+Shift+D` |
+| Split Down | `Cmd+Shift+D` |
+| Focus Left | `Cmd+Left` |
+| Focus Right | `Cmd+Right` |
+| Focus Up | `Cmd+Up` |
+| Focus Down | `Cmd+Down` |
+| Resize | Use arrow keys or `Ctrl+Shift+Alt+Arrow` |
+| Close | `Cmd+W` / `Ctrl+Shift+W` |
 
 ### Tabs
+
 | Action | Key |
 |--------|-----|
-| New Tab | `Ctrl+Shift+T` |
-| Close Tab | `Ctrl+Shift+Q` |
-| Next Tab | `Ctrl+Shift+]` |
-| Prev Tab | `Ctrl+Shift+[` |
+| New Tab | `Cmd+T` / `Ctrl+Shift+T` |
+| Close Tab | `Cmd+W` / `Ctrl+Shift+W` |
+| Next Tab | `Ctrl+Tab` |
+| Previous Tab | `Ctrl+Shift+Tab` |
 
 ### Font
-| Action | Key |
-|--------|-----|
-| Increase | `Ctrl+Plus` |
-| Decrease | `Ctrl+Minus` |
-| Reset | `Ctrl+0` |
 
-### Other
 | Action | Key |
 |--------|-----|
+| Increase | `Cmd+=` / `Ctrl+=` |
+| Decrease | `Cmd+-` / `Ctrl+-` |
+| Reset | `Cmd+0` / `Ctrl+0` |
+
+### System
+
+| Action | Key |
+|--------|-----|
+| Reload Config | `Cmd+R` / `Ctrl+R` ⭐ |
+| Fullscreen | `Cmd+Shift+Enter` / `F11` |
+| Search | `Cmd+Shift+F` |
 | Copy | `Ctrl+Shift+C` |
 | Paste | `Ctrl+Shift+V` |
-| Search | `Ctrl+Shift+F` |
-| Fullscreen | `Super+Enter` |
-| Reload Config | `Ctrl+Shift+,` |
 
 ## Themes
 
 ```bash
 # Switch theme
 cd ghostty-config
+./switch-theme.sh catppuccin-mocha
 ./switch-theme.sh tokyo-night
 ./switch-theme.sh nord
-./switch-theme.sh gruvbox
-./switch-theme.sh dracula
 ```
 
 ## CLI Commands
@@ -61,6 +67,9 @@ cd ghostty-config
 # List fonts
 ghostty +list-fonts
 
+# List themes
+ghostty +list-themes
+
 # Show current config
 ghostty +show-config
 
@@ -68,13 +77,17 @@ ghostty +show-config
 ghostty +show-config --default --docs
 
 # Launch with custom config
-ghostty --font-size=14 --theme=light
+ghostty --font-size=16 --theme=light
 ```
 
-## Config Locations
+## Platform Differences
 
-- Linux: `~/.config/ghostty/config`
-- macOS: `~/Library/Application Support/com.mitchellh.ghostty/config`
+| Feature | macOS | Linux |
+|---------|-------|-------|
+| Option Key | `Option` acts as `Alt` (for Vim/tmux) | `Alt` works normally |
+| Cmd Key | `Cmd` acts as `Super` (Win) | `Ctrl` is default |
+| Input Method | Native | Use `gtk-im-module` |
+| Rendering | Quartz | OpenGL |
 
 ## Specialized Configs
 
@@ -91,14 +104,19 @@ echo "config-file = ~/.config/ghostty/configs/presentation.conf" >> ~/.config/gh
 
 ## Tips
 
-1. **Project-specific configs**: Create `.ghostty/config` in your project
-2. **Quick font adjust**: Use `Ctrl+Plus/Minus` for presentations
-3. **Split workflow**: Perfect for monitoring logs while coding
-4. **Reload config**: No restart needed with `Ctrl+Shift+,`
+1. **Quick font adjust:** Use `Cmd+=/=-` for presentations
+2. **Split workflow:** Perfect for monitoring logs while coding
+3. **Project configs:** Create `.ghostty/config` in your project
+4. **Reload:** No restart needed with `Cmd+R` / `Ctrl+R`
+
+## Config Location
+
+- **Linux:** `~/.config/ghostty/config`
+- **macOS:** `~/.config/ghostty/config` (XDG path preferred)
 
 ## Resources
 
 - 📖 Docs: https://ghostty.org/docs
 - ⚙️ Config Ref: https://ghostty.org/docs/config/reference
 - 🐙 GitHub: https://github.com/loganylchen/ghostty-config
-- 💬 Community: https://discord.gg/ghostty
+- 🎨 Themes: https://github.com/catppuccin/catppuccin

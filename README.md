@@ -2,29 +2,15 @@
 
 A carefully crafted Ghostty terminal configuration for maximum productivity and aesthetics.
 
-## Features
+## ✨ Features
 
-✨ **Optimized for Developers**
-- Clean and modern color scheme (One Dark inspired)
-- JetBrains Mono font with proper sizing
-- Smart keybindings for workflow efficiency
+- **Cross-Platform** - Works on macOS and Linux
+- **Beautiful Themes** - Catppuccin Mocha & Latte (plus more)
+- **Optimized for Developers** - Clean keybindings and productivity tools
+- **Performance First** - GPU acceleration, smooth scrolling
+- **Smart Defaults** - No complex setup required
 
-🚀 **Performance First**
-- GPU acceleration enabled
-- Optimized scrolling and rendering
-- Minimal resource usage
-
-🎨 **Beautiful & Functional**
-- Carefully selected color palette
-- Proper padding and spacing
-- Readable fonts for long coding sessions
-
-⚡ **Productivity Boosters**
-- Intuitive split panes management
-- Quick font size adjustment
-- Smart copy/paste behavior
-
-## Quick Start
+## 🚀 Quick Start
 
 ### Installation
 
@@ -34,113 +20,174 @@ git clone https://github.com/loganylchen/ghostty-config.git
 cd ghostty-config
 ```
 
-2. **Backup your existing config (if any):**
+2. **Run the installer:**
 ```bash
+chmod +x install.sh
+./install.sh
+```
+
+3. **Reload Ghostty:**
+- Press `Cmd+R` (macOS) or `Ctrl+R` (Linux)
+- Or press `Ctrl+Shift+,` (Linux) or `Cmd+Shift+,` (macOS)
+
+### Manual Installation
+
+```bash
+# Create directory
 mkdir -p ~/.config/ghostty
-[ -f ~/.config/ghostty/config ] && mv ~/.config/ghostty/config ~/.config/ghostty/config.backup
-```
 
-3. **Install the configuration:**
-```bash
+# Copy config
 cp config ~/.config/ghostty/config
+
+# Copy themes
+cp -r themes/* ~/.config/ghostty/themes/
+
+# Copy configs
+cp -r configs/* ~/.config/ghostty/configs/
+
+# Make scripts executable
+chmod +x switch-theme.sh
+
+# Switch to a theme (optional)
+./switch-theme.sh catppuccin-mocha
 ```
 
-4. **Reload Ghostty:**
-- Press `Ctrl+Shift+,` (Linux) or `Cmd+Shift+,` (macOS)
-- Or restart Ghostty
-
-## Configuration Options
-
-### Basic Setup
-The main configuration file (`config`) contains sensible defaults that work great out of the box.
-
-### Advanced Customization
-Check the `configs/` directory for specialized configurations:
-
-- `programming.conf` - Optimized for coding
-- `writing.conf` - Better for documentation and writing
-- `presentation.conf` - Large fonts for demos
-
-To use them:
-```bash
-# Include in your main config
-echo "config-file = ~/.config/ghostty/programming.conf" >> ~/.config/ghostty/config
-```
-
-## Key Bindings
-
-| Action | Linux | macOS |
-|--------|-------|-------|
-| Split Right | `Ctrl+Shift+D` | `Cmd+Shift+D` |
-| Split Down | `Ctrl+Shift+E` | `Cmd+Shift+E` |
-| Navigate Splits | `Ctrl+Shift+Arrow` | `Cmd+Shift+Arrow` |
-| Resize Splits | `Ctrl+Shift+Alt+Arrow` | `Cmd+Shift+Alt+Arrow` |
-| Close Split | `Ctrl+Shift+W` | `Cmd+Shift+W` |
-| Increase Font | `Ctrl+Plus` | `Cmd+Plus` |
-| Decrease Font | `Ctrl+Minus` | `Cmd+Minus` |
-| Reset Font | `Ctrl+0` | `Cmd+0` |
-| Copy | `Ctrl+Shift+C` | `Cmd+Shift+C` |
-| Paste | `Ctrl+Shift+V` | `Cmd+Shift+V` |
-| Search | `Ctrl+Shift+F` | `Cmd+Shift+F` |
-| Fullscreen | `Super+Enter` | `Cmd+Enter` |
-| Reload Config | `Ctrl+Shift+,` | `Cmd+Shift+,` |
-
-## Themes
+## 🎨 Themes
 
 ### Included Themes
 
-1. **One Dark** (default) - Inspired by Atom's One Dark
-2. **Tokyo Night** - A beautiful dark theme
-3. **Nord** - Arctic, bluish color palette
-4. **Gruvbox** - Retro groove color scheme
-5. **Dracula** - Dark theme with purple accents
+| Theme | Description |
+|-------|-------------|
+| **catppuccin-mocha** | 🌙 Dark theme, default |
+| **catppuccin-latte** | ☀️ Light theme |
+| **tokyo-night** | 🌃 Cyberpunk aesthetic |
+| **nord** | ❄️ Arctic colors |
+| **gruvbox** | 🍔 Retro vibes |
+| **dracula** | 🧛 Dark purple theme |
 
-To switch themes:
+### Switching Themes
+
 ```bash
-# Copy your preferred theme
-cp themes/tokyo-night.conf ~/.config/ghostty/theme.conf
+cd ghostty-config
 
-# Add to main config
-echo "config-file = ~/.config/ghostty/theme.conf" >> ~/.config/ghostty/config
+# Switch themes
+./switch-theme.sh catppuccin-mocha
+./switch-theme.sh tokyo-night
+./switch-theme.sh nord
 ```
 
-## Color Schemes
-
-### Current: One Dark
-```
-Background: #1e2127
-Foreground: #abb2bf
-Cursor:     #528bff
-Selection:  #3e4451
-
-Black:      #1e2127    #5c6370
-Red:        #e06c75    #e06c75
-Green:      #98c379    #98c379
-Yellow:     #d19a66    #d19a66
-Blue:       #61afef    #61afef
-Magenta:    #c678dd    #c678dd
-Cyan:       #56b6c2    #56b6c2
-White:      #abb2bf    #ffffff
-```
-
-## Tips & Tricks
-
-### 1. Project-specific Configurations
-Create a `.ghostty/config` file in your project directory:
+Or manually:
 ```bash
-cd ~/projects/myproject
-mkdir -p .ghostty
-echo "background = 1a1b26" > .ghostty/config
-echo "window-title = MyProject" >> .ghostty/config
+cp ~/.config/ghostty/themes/tokyo-night.conf ~/.config/ghostty/theme.conf
 ```
 
-### 2. Dynamic Font Sizing
-Quickly adjust font size for presentations or screen sharing:
-- `Ctrl+Plus` to increase
-- `Ctrl+Minus` to decrease
-- `Ctrl+0` to reset
+## ⌨️ Keybindings
 
-### 3. Split Pane Workflow
+### Split Panes (MacOS: `Cmd`, Linux: `Ctrl`)
+
+| Action | Key |
+|--------|-----|
+| Split Right | `Cmd+D` / `Ctrl+Shift+D` |
+| Split Down | `Cmd+Shift+D` |
+| Focus Left | `Cmd+Left` |
+| Focus Right | `Cmd+Right` |
+| Focus Up | `Cmd+Up` |
+| Focus Down | `Cmd+Down` |
+| Close Surface | `Cmd+W` / `Ctrl+Shift+W` |
+
+### Tabs
+
+| Action | Key |
+|--------|-----|
+| New Tab | `Cmd+T` / `Ctrl+Shift+T` |
+| Close Tab | `Cmd+W` / `Ctrl+Shift+W` |
+| Next Tab | `Ctrl+Tab` |
+| Previous Tab | `Ctrl+Shift+Tab` |
+
+### Font Size
+
+| Action | Key |
+|--------|-----|
+| Increase | `Cmd+=` / `Ctrl+=` |
+| Decrease | `Cmd+-` / `Ctrl+-` |
+| Reset | `Cmd+0` / `Ctrl+0` |
+
+### System
+
+| Action | Key |
+|--------|-----|
+| Reload Config | `Cmd+R` / `Ctrl+R` |
+| Fullscreen | `Cmd+Shift+Enter` / `F11` |
+| Search | `Cmd+Shift+F` |
+
+## 🔧 Configuration
+
+### Specialized Configs
+
+```bash
+# Programming mode (larger font, more scrollback)
+echo "config-file = ~/.config/ghostty/configs/programming.conf" >> ~/.config/ghostty/config
+
+# Writing mode (better for docs)
+echo "config-file = ~/.config/ghostty/configs/writing.conf" >> ~/.config/ghostty/config
+
+# Presentation mode (large fonts for demos)
+echo "config-file = ~/.config/ghostty/configs/presentation.conf" >> ~/.config/ghostty/config
+```
+
+### Platform-Specific
+
+The main config includes platform-specific blocks:
+
+**macOS:** `[platform=macos]` - Option=Alt mapping, display-p3 colors
+**Linux:** `[platform=linux]` - OpenGL rendering, input method support
+
+### Customization
+
+Edit `~/.config/ghostty/config` directly:
+```bash
+nano ~/.config/ghostty/config
+```
+
+## 📊 Config Options
+
+### Font & Rendering
+
+```conf
+font-family = "JetBrains Mono Nerd Font"
+font-size = 14
+font-ligatures = true
+antialiasing = subpixel
+max-frame-rate = 120
+```
+
+### Appearance
+
+```conf
+background-opacity = 0.96
+line-height = 1.2
+window-padding-x = 8
+window-padding-y = 8
+```
+
+### Behavior
+
+```conf
+select-to-copy = true
+scrollback-lines = 10000
+window-save-state = always
+bell = none
+```
+
+## 💡 Tips & Tricks
+
+### 1. Font Size Adjustment
+Quickly adjust for presentations:
+- `Cmd+=` to increase
+- `Cmd+-` to decrease
+- `Cmd+0` to reset
+
+### 2. Split Workflow
 Perfect for monitoring logs while coding:
 ```
 ┌─────────────┬─────────────┐
@@ -152,96 +199,96 @@ Perfect for monitoring logs while coding:
 └───────────────────────────┘
 ```
 
-### 4. Profile Management
-Use different configs for different purposes:
+### 3. Project-Specific Configs
+Create `.ghostty/config` in your project directory:
 ```bash
-# Work profile
-ghostty --config-file=~/.config/ghostty/profiles/work.conf
-
-# Personal profile
-ghostty --config-file=~/.config/ghostty/profiles/personal.conf
+cd ~/projects/myproject
+mkdir -p .ghostty
+echo "font-size = 16" > .ghostty/config
+echo "window-title = MyProject" >> .ghostty/config
 ```
 
-### 5. Performance Tips
-```conf
-# For high-refresh-rate monitors (144Hz+)
-adjust-cell-height = 0
-adjust-cell-width = 0
+### 4. Quick Config Reload
+No restart needed - just press `Cmd+R` or `Ctrl+R`!
 
-# Reduce motion if preferred
-cursor-style-blink = false
-```
+## 🛠️ CLI Commands
 
-## Customization
-
-### Adding Custom Fonts
 ```bash
 # List available fonts
 ghostty +list-fonts
 
-# Add to config
-echo "font-family = Your Font Name" >> ~/.config/ghostty/config
+# List available themes
+ghostty +list-themes
+
+# Show current config
+ghostty +show-config
+
+# Show default config with docs
+ghostty +show-config --default --docs
+
+# Launch with custom settings
+ghostty --font-size=16 --theme=dark
 ```
 
-### Creating Custom Themes
-1. Copy an existing theme from `themes/`
-2. Modify the colors
-3. Include in your main config
+## 🎯 Custom Fonts
 
-Example:
-```conf
-# My custom theme
-background = 282c34
-foreground = abb2bf
-cursor-color = 528bff
-# ... more colors
-```
+Use JetBrains Mono Nerd Font (included in config) or customize:
 
-## Troubleshooting
-
-### Font not rendering correctly
 ```bash
 # Check available fonts
-ghostty +list-fonts | grep -i "your font"
+ghostty +list-fonts | grep "JetBrains"
 
-# Verify font is installed
-fc-list | grep -i "your font"
+# Customize in config
+echo 'font-family = "Your Font Name"' >> ~/.config/ghostty/config
 ```
+
+## 🐛 Troubleshooting
 
 ### Config not reloading
-- Check syntax with: `ghostty +show-config`
-- Look for errors in console output
-- Ensure no typos in key names
+```bash
+# Check syntax
+ghostty +show-config
 
-### Performance issues
-```conf
-# Try these settings
-gpu-renderer = auto
-scrollback-limit = 5000
+# Restart Ghostty
 ```
 
-## Resources
+### Theme not showing
+```bash
+# Verify theme file exists
+ls ~/.config/ghostty/themes/
 
-- [Official Documentation](https://ghostty.org/docs)
-- [Configuration Reference](https://ghostty.org/docs/config/reference)
-- [GitHub Repository](https://github.com/ghostty-org/ghostty)
-- [Community Configs](https://github.com/search?q=path%3Aghostty%2Fconfig&type=code)
+# Switch theme manually
+./switch-theme.sh [theme-name]
+```
 
-## Contributing
+### Font rendering issues
+```bash
+# Reinstall JetBrains Mono Nerd Font
+# Download from: https://github.com/ryanoasis/nerd-fonts/releases
+```
+
+## 📚 Resources
+
+- **Official Docs:** https://ghostty.org/docs
+- **Config Reference:** https://ghostty.org/docs/config/reference
+- **GitHub:** https://github.com/ghostty-org/ghostty
+- **Community:** https://discord.gg/ghostty
+
+## 🤝 Contributing
 
 Found a better configuration? Have suggestions?
 
 1. Fork this repository
-2. Create your feature branch (`git checkout -b feature/amazing-config`)
-3. Commit your changes (`git commit -m 'Add amazing config'`)
-4. Push to the branch (`git push origin feature/amazing-config`)
-5. Open a Pull Request
+2. Create your feature branch
+3. Submit a pull request
 
-## License
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+## 📝 License
 
 MIT License - Feel free to use, modify, and share!
 
-## Author
+## 👤 Author
 
 **Logan CHEN**
 - GitHub: [@loganylchen](https://github.com/loganylchen)
