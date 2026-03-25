@@ -32,11 +32,11 @@ cursor-style = bar
 # ------------------------------
 scrollback-limit = 10000
 window-save-state = always
-focus-follows-mouse = false
 
 # ------------------------------
-# 分屏快捷键
+# 分屏快捷键（正确）
 # ------------------------------
+# 创建分屏
 keybind = cmd+d=new_split:right
 keybind = cmd+shift+d=new_split:down
 keybind = cmd+shift+enter=toggle_split_zoom
@@ -45,7 +45,7 @@ keybind = ctrl+shift+d=new_split:right
 keybind = ctrl+shift+alt+d=new_split:down
 keybind = ctrl+shift+enter=toggle_split_zoom
 
-# 分屏导航
+# 分屏导航（使用 goto_split）
 keybind = cmd+left=goto_split:left
 keybind = cmd+right=goto_split:right
 keybind = cmd+up=goto_split:up
@@ -61,8 +61,10 @@ keybind = ctrl+alt+down=goto_split:down
 # ------------------------------
 keybind = cmd+t=new_tab
 keybind = cmd+w=close_surface
+keybind = ctrl+shift+t=new_tab
+keybind = ctrl+shift+w=close_surface
 keybind = ctrl+tab=next_tab
-keybind = ctrl+shift+tab=prev_tab
+keybind = ctrl+shift+tab=previous_tab
 
 # ------------------------------
 # 字体大小快捷键
@@ -91,6 +93,9 @@ keybind = f11=toggle_fullscreen
 #
 # To list available fonts:
 #   ghostty +list-fonts
+#
+# To list all keybinds:
+#   ghostty +list-keybinds
 #
 # To reload config without restart:
 #   Cmd+R (macOS) or Ctrl+R (Linux)
