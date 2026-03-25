@@ -1,0 +1,41 @@
+# Catppuccin Latte Theme (Light)
+# https://github.com/catppuccin/catppuccin
+
+background = eff1f5
+foreground = 4c4f69
+
+cursor-color = dc8a78
+selection-background = acb0be
+selection-foreground = 4c4f69
+
+# Black
+palette = 0=#4c4f69
+palette = 8=#9ca0b0
+
+# Red
+palette = 1=#d20f39
+palette = 9=#d20f39
+
+# Green
+palette = 2=#40a02b
+palette = 10=#40a02b
+
+# Yellow
+palette = 3=#df8e1d
+palette = 11=#df8e1d
+
+# Blue
+palette = 4=#1e66f5
+palette = 12=#1e66f5
+
+# Magenta
+palette = 5=#ea76cb
+palette = 13=#ea76cb
+
+# Cyan
+palette = 6=#179299
+palette = 14=#179299
+
+# White
+palette = 7=#acb0be
+palette = 15=#bcc0cc

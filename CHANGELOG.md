@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-03-25
+
+### Fixed
+- **Major Configuration Overhaul**: Removed all invalid configuration options
+  - Removed: font-weight, antialiasing, subpixel-position, line-height, letter-spacing
+  - Removed: max-frame-rate, vsync, cursor-blink, cursor-blink-interval
+  - Removed: window-title, window-dimensions, bell, confirm-quit
+  - Removed: bracketed-paste, bracketed-paste-filter, select-to-copy
+  - Removed: platform-specific blocks ([platform=macos], [platform=linux])
+  - Removed: non-existent macOS and Linux specific options
+- Fixed all keybinding errors (InvalidAction, InvalidFormat)
+- Fixed theme file format (removed .conf extension)
+
+### Changed
+- Simplified configuration to only use valid, tested options
+- Updated theme installation to use correct file format
+- Improved documentation to reflect actual capabilities
+- Removed unstable or future-version features
+
+### Added
+- Clean, minimal configuration that works reliably
+- Proper theme file format (no .conf extension)
+- Better installation script with theme handling
+
 ## [1.1.1] - 2026-03-25
 
 ### Fixed

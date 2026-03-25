@@ -45,9 +45,17 @@ mkdir -p "$CONFIG_DIR/configs"
 print_msg "Installing main configuration..." "$GREEN"
 cp config "$CONFIG_FILE"
 
-# Copy themes
+# Copy themes (Ghostty expects theme files without .conf extension)
 print_msg "Installing themes..." "$GREEN"
-cp -r themes/* "$CONFIG_DIR/themes/" 2>/dev/null || true
+mkdir -p "$CONFIG_DIR/themes"
+for theme in themes/*; do
+  if [ -f "$theme" ]; then
+    theme_name=$(basename "$theme")
+    # Remove .conf extension if present
+    theme_name=${theme_name%.conf}
+    cp "$theme" "$CONFIG_DIR/themes/$theme_name"
+  fi
+done
 
 # Copy configs
 print_msg "Installing additional configs..." "$GREEN"
