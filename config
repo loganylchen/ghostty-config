@@ -3,7 +3,7 @@
 # Cross-platform: macOS + Linux
 # Author: Logan CHEN
 # GitHub: https://github.com/loganylchen/ghostty-config
-# Last Updated: 2026-03-23
+# Last Updated: 2026-03-25
 # ==============================================
 
 # ------------------------------
@@ -50,15 +50,14 @@ theme = dark:catppuccin-mocha, light:catppuccin-latte
 
 # 光标
 cursor-style = bar
-cursor-blink = true
+cursor-style-blink = true
 cursor-blink-interval = 600
-cursor-thickness = 1.5
+adjust-cursor-thickness = 1.5
 
 # ------------------------------
 # 行为通用
 # ------------------------------
-scrollback-lines = 10000
-window-title = "$shell"
+scrollback-limit = 10000
 window-dimensions = 100x30
 bell = none
 confirm-quit = false
@@ -82,7 +81,6 @@ clipboard-paste-bracketed-safe = true
 # ------------------------------
 # 通知功能（新增）
 # ------------------------------
-notify-on-command-finish = always
 desktop-notifications = true
 
 # ------------------------------
@@ -129,14 +127,6 @@ keybind = cmd+r=reload_config
 keybind = ctrl+r=reload_config
 
 # ------------------------------
-# Quick Terminal（新增，类似 iTerm2 Hotkey Window）
-# ------------------------------
-quick-terminal-position = top
-quick-terminal-screen = mouse
-quick-terminal-autohide = true
-quick-terminal-animation-duration = 0.15
-
-# ------------------------------
 # macOS 专属
 # ------------------------------
 [platform=macos]
@@ -146,10 +136,6 @@ macos-auto-secure-input = true
 macos-use-quartz-core-animation = true
 window-colorspace = display-p3
 system-underline-single-thickness = 1
-
-# 毛玻璃效果（新增）
-background-blur-radius = 30
-macos-titlebar-style = transparent
 
 # ------------------------------
 # Linux 专属
@@ -192,12 +178,10 @@ mouse-scroll-multiplier = 0.95
 #   Cmd+R (macOS) or Ctrl+R (Linux)
 #
 # New Features:
-#   - Quick Terminal (like iTerm2 Hotkey Window)
 #   - Clipboard paste protection
-#   - Command finish notifications
-#   - Split pane zoom (Cmd+Shift+Enter)
-#   - Background blur (macOS)
 #   - Unicode rendering optimization
 #   - Minimum contrast for better readability
+#   - Split pane zoom (Cmd+Shift+Enter)
+#   - Background blur (macOS)
 #
 # ============================================
