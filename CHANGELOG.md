@@ -5,23 +5,38 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2026-03-25
+
+### Fixed
+- 修复配置文件中的错误选项
+  - `scrollback-lines` → `scrollback-limit`
+  - `cursor-thickness` → `adjust-cursor-thickness`
+- 移除不存在的配置选项
+  - `quick-terminal-*` (未来版本特性)
+  - `background-blur-radius` (不存在)
+  - `macos-titlebar-style` (不存在)
+  - `notify-on-command-finish` (不存在)
+  - `window-title` (格式错误)
+
+### Changed
+- 更新文档以反映实际可用的功能
+- 简化配置，只保留稳定可用的选项
+
 ## [1.1.0] - 2026-03-23
 
 ### Added
-- Quick Terminal feature (like iTerm2 Hotkey Window)
 - Clipboard paste protection for security
-- Command finish notifications
-- Split pane zoom functionality (Cmd+Shift+Enter)
-- Background blur effect for macOS
 - Unicode rendering optimization
 - Minimum contrast setting for better readability
 - Font thicken option for clearer text
 - Enhanced mouse behavior (hide while typing, scroll multiplier)
 - Shell integration features (no-cursor, ssh-env)
+- Split pane zoom functionality (Cmd+Shift+Enter)
+- Catppuccin Mocha and Latte themes
+- Platform-specific blocks ([platform=macos], [platform=linux])
 
 ### Changed
 - Updated main config to cross-platform best practices
-- Added Catppuccin Mocha and Latte themes
 - Improved split pane management
 - Better font rendering settings
 - Enhanced scrollback buffer (10000 lines)

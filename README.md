@@ -10,17 +10,14 @@ A carefully crafted Ghostty terminal configuration for maximum productivity and 
 - **Performance First** - GPU acceleration, smooth scrolling
 - **Smart Defaults** - No complex setup required
 
-### 🆕 New in v1.1 (Enhanced)
-- **Quick Terminal** - iTerm2-style hotkey window
+## 🆕 Enhanced Features (v1.1)
 - **Clipboard Protection** - Security for multi-line paste
-- **Command Notifications** - Get notified when commands finish
-- **Split Pane Zoom** - Maximize splits temporarily
-- **Background Blur** - macOS frosted glass effect
 - **Unicode Optimization** - Better CJK/emoji rendering
 - **Minimum Contrast** - Improved readability
+- **Split Pane Zoom** - Maximize splits temporarily
 - **Font Thicken** - Bolder, clearer text
 
-See [WHATS-NEW.md](WHATS-NEW.md) for details!
+See [CHANGELOG.md](CHANGELOG.md) for details!
 
 ## 🚀 Quick Start
 
