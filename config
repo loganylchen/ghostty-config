@@ -24,6 +24,10 @@ background-opacity = 0.96
 # ------------------------------
 theme = dark:catppuccin-mocha, light:catppuccin-latte
 
+# ssh
+
+shell-integration-features = ssh-terminfo, ssh-env
+
 # 光标
 cursor-style = bar
 
